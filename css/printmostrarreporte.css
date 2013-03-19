@@ -1,0 +1,20 @@
+@page{
+  size: landscape A4;
+  margin: 0.7cm;
+}
+
+.botonsalir{
+    display: none;    
+}
+
+
+.posttabla{
+    position: relative;
+    float:left;
+}
+#tabla{
+    margin: 10pt;
+    margin-bottom: 10pt;
+    
+}
+

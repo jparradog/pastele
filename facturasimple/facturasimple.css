@@ -1,0 +1,65 @@
+root { 
+    display: block;
+}
+#header{
+    height: 165px;
+}
+.fila{
+    height: 40px;
+}
+.datosfactura{
+ float: right;
+ margin-right:30px;
+ height: auto;
+}
+.msg-factura{
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    color: #c09853;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display:block;
+}
+.titulofactura{
+ margin-left: 30px;
+ 
+ 
+}
+.titulo{
+ margin-left: 50%;
+ margin-right: 50%;
+}
+
+
+.tablafactura{
+  margin-left: 30px;
+  margin-right: 30px;
+
+  
+  
+}
+
+.botonfilas{
+ position: absolute;
+ margin-left: 30px; 
+ 
+ 
+}
+
+.botonguardar{
+ float: left; 
+ bottom: 70%;
+ margin-left: 30px;
+}
+
+.totales{
+    border: 1px solid #000;
+    background-color: #99CCFF;
+}

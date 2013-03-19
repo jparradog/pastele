@@ -1,0 +1,33 @@
+#tabla{
+    margin: 20px;
+    margin-bottom: 20px;
+    
+}
+
+
+.botonsalir{
+   
+    position: relative;
+    float:left;
+    margin-left:3.5%;
+}
+
+#tablagastos{
+    margin: 15px;
+}
+
+.posttabla{
+    position: relative;
+    float:left;
+}
+
+.divtabla{
+    margin: 30px;
+    
+}
+
+.botonsalirabsoluto{
+    position: absolute;
+    bottom: 20%;
+    left: 3.5%;
+}

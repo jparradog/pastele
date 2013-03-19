@@ -1,0 +1,14 @@
+body ,form, table{margin : 0;
+	padding : 0;
+	border : none; 
+	font-family :  Arial;
+	font-size:  12px;
+	
+}
+p {color: #7B91B4;font-size:14px;}
+td.standard {font-family: arial; font-size: 14px; color: black; background-color: #FFFFFF}
+td.group {font-family: arial; font-size: 14px; color: black; font-weight: bold; background-color: #BBCADE;}
+
+a{text-decoration: none; color: #000000;}
+a:hover{color: #7B91B4;}
+
