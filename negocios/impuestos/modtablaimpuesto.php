@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 define("RUTA_ABS", dirname(__FILE__));
 include_once (RUTA_ABS."/controlador/conexion.php");
@@ -45,3 +46,4 @@ if (!$result) {
         <?php } ?>
     </tbody>
 </table>
+</div>

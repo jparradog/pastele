@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 /*
  * (bars) sidebar_main.php -> (negocios/proveedor) modtablaproveedor.php -> (vistas/proveedor) modproveedor.php
@@ -109,3 +110,4 @@ if (isset($_GET['msg'])) {
 <?php } ?>
     </tbody>
 </table>
+</div>

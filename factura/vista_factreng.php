@@ -11,7 +11,7 @@ $fecha = $_POST['fecha'];
 jsoner("listprod", $cliente);
 
 ?>
-
+<div class="well">
 <form style="margin-left: 15px;" action="factura/Emitirfactura.php" method="post">
     
     <legend>Nueva Factura - Paso 2</legend>
@@ -95,3 +95,4 @@ jsoner("listprod", $cliente);
     <input type="hidden" type="text" value="<?php echo $cliente ?>" name="cliente">
     <input id="inputidx" name="inputidx" type="hidden" value="1" type="text" value="" name="idx">
 </form>
+</div>

@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/impuestos/modificarimpuesto.php" method="post">
   <legend>Modificar Impuesto</legend>
   
@@ -12,3 +13,4 @@
   <input type="reset" class="btn btn-primary" value="Resetear" name="reset">
   <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

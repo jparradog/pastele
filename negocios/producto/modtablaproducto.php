@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 /*
  *(bars) sidebar_main.php -> (negocios/producto) modtablaproducto.php -> (vistas/producto) modproducto.php
@@ -87,3 +88,4 @@ if (!$result) {
         <?php } ?>
     </tbody>
 </table>
+</div>

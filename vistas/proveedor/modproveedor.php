@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/proveedor/modificarproveedor.php" method="post">
     <table border="0" class="table">
 
@@ -46,3 +47,4 @@
     <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=modtablaproveedor.php&dir=proveedor&mdir=negocios','_self');" value="Atras" name="atras">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

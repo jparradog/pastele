@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 /*
  * (bars) sidebar_main.php -> (negocios/compras) modtablacompras.php -> (vistas/compras) modcompras.php
@@ -39,6 +40,7 @@ ON proveedor.idproveedor = renglon_compras.idproveedor
         exit;
     }
     ?>
+
     <legend style="margin-left:15px;">Modificar Compras a Proveedores</legend>
     <div class="input-prepend">
         <label style="margin-left: 5px ;" >Filtrar por Fecha</label>
@@ -213,3 +215,4 @@ LIMIT $limit";
     <a class="btn" href=<?php echo "main.php?iu=modtablacompras.php&mdir=negocios&dir=compras&limit=" . $limit; ?>>Mostrar más Filas</a>
 
 <?php } ?>
+</div>

@@ -1,3 +1,4 @@
+<div class="well">
 <form  action="negocios/cliente/modificarcliente.php" method="post">
     <table border="0" class="table">
 
@@ -53,3 +54,4 @@
     <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=modtablacliente.php&dir=cliente&mdir=negocios','_self');" value="Atras" name="atras">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

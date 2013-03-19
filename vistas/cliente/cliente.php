@@ -1,3 +1,4 @@
+<div class="well">
 <form action="negocios/cliente/altacliente.php" method="post">
 
     <table border="0" class="table">
@@ -62,3 +63,4 @@
 </form>
 
 
+</div>

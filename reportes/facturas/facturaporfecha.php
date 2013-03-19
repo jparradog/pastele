@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 if ($_GET['tipo'] == 'total') {
     ?>
@@ -51,3 +52,4 @@ if ($_GET['tipo'] == 'simple') {
     <?php
 }
 ?>
+</div>

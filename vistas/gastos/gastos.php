@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/gastosvarios/altagastosvarios.php" method="post">
     <?php
     if ($_GET['msg'] == 'gastook') {
@@ -11,7 +12,7 @@
         <label>Valor</label>
         <span class="add-on">€</span><input name="precio" type="text" >
         <label>IVA</label>
-        <span class="add-on">€</span><input name="iva" type="text" >
+        <span class="add-on">%</span><input name="iva" type="text" >
     </div>
     <legend>Fecha</legend>
     <label>Fecha</label>
@@ -23,3 +24,4 @@
     <input type="submit" class="btn btn-primary" value="Guardar" name="enviar">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

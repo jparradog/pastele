@@ -26,9 +26,9 @@ ini_set("error_reporting",  E_ALL & ~E_NOTICE);
     <body onload="fecha()"> 
 
         <?php include (RUTA_ABS . "/bars/navbar.php"); ?>
-        <div class="container-fluid">
+        <div  style="font:13px;" class="container-fluid">
 
-            <div class="row-fluid">
+            <div  class="row-fluid">
                 <div class="span2">
                     <!--Sidebar content-->
 
@@ -38,7 +38,7 @@ ini_set("error_reporting",  E_ALL & ~E_NOTICE);
                 </div>
                 <div class="span10">
                     <!--Body content-->
-                    <div class="well" style=" margin-top: 15px; width: auto;  padding: 8px 0;">
+                    <div  style="margin-top: 15px; width: auto;  padding: 8px 0;">
                         <?php
                         if ($iuflag == false) {
                             include ($vistas_dir . $vista);

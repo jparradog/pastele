@@ -37,6 +37,7 @@ $result = mysql_query($query);
 //En fila guardo los nombres
 $fila = mysql_fetch_array($result);
 ?>
+<div class="well">
 <form name="formulario" style="margin-left: 15px;" action="negocios/compras/guardarcompra.php" method="post">
     <div name="titulos">
         <legend><?php echo $fila['nombre'] . " / " . $fila['nombretrimestre'] . " / " . $fila['nombremes']; ?></legend>  
@@ -82,3 +83,4 @@ $fila = mysql_fetch_array($result);
     <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=compras.php&mdir=vistas&dir=compras','_self');" value="Atras" name="atras">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

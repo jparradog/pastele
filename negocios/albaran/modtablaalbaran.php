@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 //define("RUTA_ABS", dirname(__FILE__));
 include_once (RUTA_ABS . "/controlador/conexion.php");
@@ -215,3 +216,4 @@ if (isset($_GET['fechai']) && isset($_GET['fechaf'])) {
     <?php } //FIN IF BOTON ?>
 <?php
 } //FIN IF BUSCADOR?>
+</div>

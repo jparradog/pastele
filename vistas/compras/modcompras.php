@@ -17,7 +17,7 @@ $result = mysql_query($query);
 
 $fila = mysql_fetch_array($result);
 ?>
-
+<div class="well">
 <form name="formulario" style="margin-left: 15px;" action="negocios/compras/modificarcompra.php" method="post">
     <div name="titulos">
         <legend><?php echo $_GET['proveedor'] . " / " . $fila['nombretrimestre'] . " / " . $_GET['nombremes']; ?></legend>  
@@ -47,3 +47,4 @@ $fila = mysql_fetch_array($result);
     <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=modtablacompras.php&mdir=negocios&dir=compras','_self');" value="Atras" name="atras">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

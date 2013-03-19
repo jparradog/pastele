@@ -14,7 +14,7 @@ $fecha = $_POST['fecha'];
 
 jsoner("listprod_albaran", $cliente);
 ?>
-
+<div class="well">
 <form style="margin-left: 15px;" action="albaran/Emitiralbaran.php" method="post">
 
     <legend>Nuevo Albaran - Paso 2</legend>
@@ -83,3 +83,4 @@ jsoner("listprod_albaran", $cliente);
     <input type="hidden" type="text" value="<?php echo $cliente ?>" name="cliente">
     <input id="inputidx" name="inputidx" type="hidden" value="1" type="text" value="" name="idx">
 </form>
+</div>

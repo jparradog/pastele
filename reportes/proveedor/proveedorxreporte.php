@@ -1,3 +1,4 @@
+<div class="well">
 <form name="formulario" style="margin-left: 15px;" action="reportes/proveedor/mostrarreporte.php" method="post">
     <legend>Total Proveedores por Trimestre</legend>
     <label>Seleccionar Trimestre</label>
@@ -24,3 +25,4 @@
     <input type="submit" class="btn btn-primary" value="Siguente" name="siguiente">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

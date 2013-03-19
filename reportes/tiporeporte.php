@@ -1,3 +1,4 @@
+<div class="well">
 <legend>Reportes</legend>
 <div class="well"  style="margin-top: 15px; max-width: 340px; padding: 8px 0; margin-left: 15px;">
     <ul class="nav nav-list">        
@@ -13,6 +14,7 @@
         <li onclick="select(this)" name="a" id="listaprecio"><a href="main.php?iu=facturaporfecha.php&mdir=reportes&dir=facturas&tipo=cliente"><i style="margin-right: 3px;" class="icon-edit"></i>Total de Venta de Facturas por Cliente</a></li>
         <li onclick="select(this)" name="a" id="listaprecio"><a href="main.php?iu=facturaporfecha.php&mdir=reportes&dir=facturas&tipo=simple"><i style="margin-right: 3px;" class="icon-edit"></i>Total de Venta de Facturas Simples por Cliente</a></li>
     </ul>
+</div>
 </div>
 <!--
 

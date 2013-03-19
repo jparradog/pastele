@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 // vistas/cliente/listaprecios.php -> Negocios/Cliente/adminlistaprecio.php
 include_once (RUTA_ABS."/controlador/conexion.php");
@@ -56,3 +57,4 @@ $result = mysql_query($sql);
         ?>                
     </tbody>
 </table>
+</div>

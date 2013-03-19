@@ -9,7 +9,7 @@ VALUES (0,00-00-0000,0,0,0,0,0)";
 $sql_cabecera2 = "INSERT INTO facturasimple (numerofacturasimple,idcliente,fecha,totalneto,totaliva,total,anulada) 
 VALUES (0,0,0000-00-00,0,0,0,0)";
 /*
- * GUARDO UNA FACTURA CON VALORES EN CERO! QUE LUEGO NO SERA MOSTRADA EN LAS VISTAS!
+ * GUARDO UNA FACTURA CON VALORES EN CERO! QUE LUEGO SERA MOSTRADA EN LAS VISTAS COMO EL REINCIO DE NUMERACION
  */
 $query_update_num = "UPDATE numfact SET num = 0 WHERE idnumfact=1";
 

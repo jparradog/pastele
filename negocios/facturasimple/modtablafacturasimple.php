@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 //define("RUTA_ABS", dirname(__FILE__));
 
@@ -29,7 +30,9 @@ if (isset($_GET['fechai']) && isset($_GET['fechaf'])) {
         exit;
     }
     ?>
+
     <legend>Facturas Simple</legend>
+    
     <div class="input-prepend">
         <h5 style="margin-left: 15px ;">Filtrar por Fecha</h5>
         <span style="margin-left: 15px ;" class="add-on">Fecha Inicio</span><input id="fechai" type="date">    
@@ -255,3 +258,4 @@ if (isset($_GET['fechai']) && isset($_GET['fechaf'])) {
     <?php } //FIN IF BOTON ?>
 
 <?php } //FIN IF BUSCADOR ?>
+</div>

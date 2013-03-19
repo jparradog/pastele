@@ -8,7 +8,7 @@
 
             <ul class="nav">
                 <li id="inicio" onclick="select(this)"><a href="main.php"><i style="margin-right: 3px;" class="icon-home"></i>Inicio</a></li>
-                <li id="conf" onclick="select(this)"><a href="main.php?iu=confnumfactura.php&mdir=vistas"><i style="margin-right: 3px;" class="icon-cog"></i>Configuración</a></li>
+                <li id="conf" onclick="select(this)"><a href="main.php?iu=config_view.php&mdir=vistas"><i style="margin-right: 3px;" class="icon-cog"></i>Configuración</a></li>
             </ul>
             <ul class="nav pull-right">
                 <li><a href="#"><i style="margin-right: 3px;" class="icon-user"></i><?php

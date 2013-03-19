@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/gastosvarios/modificargastos.php" method="post">
     <legend>Editar Gastos Varios</legend>
     <label>Descripci&oacute;n / Proveedor</label>
@@ -17,3 +18,5 @@
     <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=modtablagastos.php&dir=gastosvarios&mdir=negocios','_self');" value="Atras" name="atras">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+    
+</div>

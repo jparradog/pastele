@@ -25,6 +25,7 @@ if (mysql_num_rows($result) != 0) {
             WHERE listaprecio.idcliente = $idcliente";
     $datos = mysql_query($sql);
     ?>
+<div class="well">
     <form style="margin-left: 15px;" action="negocios/cliente/modificarlistaprecio.php" method="post">
         <legend style="margin-left:15px;">Lista de Precios de <?php echo $_GET['nombre'] . " " . $_GET['apellido'] . " " . $_GET['2apellido']; ?></legend>
         <input type="submit" class="btn btn-primary" value="Guardar" name="enviar">
@@ -121,6 +122,7 @@ if (mysql_num_rows($result) != 0) {
         <input type="button" class="btn btn-primary" onclick="window.open('main.php?iu=listaprecios.php&mdir=vistas&dir=cliente','_self');" value="Atras" name="atras">
         <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
     </form>
+</div>
     <?php
 }
 ?>

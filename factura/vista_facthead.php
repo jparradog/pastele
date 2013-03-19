@@ -1,9 +1,10 @@
+<div class="well">
 <form style="margin-left: 15px;" name="facthead" id="facthead" action="<?php echo validarSesion(); ?>?iu=vista_factreng.php&mdir=factura" method="post">
   <legend>Nueva Factura</legend>
   
   
   <label>Fecha</label>
-  <input  name="fecha" id="fechaq" type="date" >
+  <input type="date" name="fecha" id="fechaq" >
   <label>Cliente</label>
   <select name="selectcliente" id="selectcliente" type="text">
       
@@ -19,3 +20,4 @@
   
   <input type="button" class="btn btn-primary" onclick="window.open('<?php echo validarSesion(); ?>','_self');" value="Volver" name="salir">
 </form>
+</div>

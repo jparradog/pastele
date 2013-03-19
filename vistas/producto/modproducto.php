@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/producto/modificarproducto.php" method="post">
 
     <legend>Modificar Producto</legend>
@@ -22,3 +23,4 @@
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 
 </form>
+</div>

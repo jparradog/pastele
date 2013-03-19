@@ -1,3 +1,4 @@
+<div class="well">
 <?php
 /*
  * (bars) sidebar_main.php -> (negocios/gastosvarios) modtablagastos.php -> (vistas/gastos) modgastos.php
@@ -184,3 +185,4 @@ if (isset($_GET['fechai']) && isset($_GET['fechaf'])) {
 
 <?php } //FIN IF BUSCADOR?>
 
+</div>

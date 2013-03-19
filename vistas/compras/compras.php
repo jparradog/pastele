@@ -1,5 +1,5 @@
 <!-- vistas/compras/compras.php -> vistas/compras/redirectcargarfacturas.php -->
-
+<div class="well">
 <form name="formulario" style="margin-left: 15px;" action="vistas/compras/redirectcargarfacturas.php" method="post">
     <legend>Compras a Proveedores</legend>
     <label>Seleccionar Proveedor</label>
@@ -17,3 +17,4 @@
     <input type="reset" class="btn btn-primary" value="Resetear" name="reset">
     <input type="button" class="btn btn-primary" onclick="window.open('main.php','_self');" value="Salir" name="salir">
 </form>
+</div>

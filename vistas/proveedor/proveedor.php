@@ -1,3 +1,4 @@
+<div class="well">
 <form style="margin-left: 15px;" action="negocios/proveedor/altaproveedor.php" method="post">
     <table border="0" class="table">
 
@@ -48,3 +49,4 @@
 </form>
 
 
+</div>

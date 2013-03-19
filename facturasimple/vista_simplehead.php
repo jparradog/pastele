@@ -1,4 +1,4 @@
-        
+<div class="well">
 <form style="margin-left: 15px;" name="facthead" id="facthead" action="<?php echo validarSesion(); ?>?iu=vista_simplereng.php&mdir=facturasimple" method="post">
   <legend>Nueva Factura Simple</legend>
   
@@ -20,3 +20,4 @@
   
   <input type="button" class="btn btn-primary" onclick="window.open('<?php echo validarSesion(); ?>','_self');" value="Volver" name="salir">
 </form>
+</div>
