@@ -13,6 +13,7 @@
 
 </div>
 
+
 <div class="well" style="margin-left:15px; margin-top: 15px;">
 
 
@@ -40,6 +41,7 @@
     </form>
 
 </div>
+
 
 <div class="well" style="margin-left:15px; margin-top: 15px;">
 
@@ -70,6 +72,8 @@
     </a>
 
 </div>
+
+
 <div class="well" style="margin-left: 15px; margin-top: 15px;">
     <legend>Ingresar numero actual de factura</legend>
     <div style="margin-right: 15px;" class="alert alert-info">
@@ -78,7 +82,7 @@
 
     </div>    
     <p></p>
-    <form action="main.php?iu=init_numfact.php&mdir=controlador" method="post">
+    <form action="main.php?iu=reset.php&mdir=controlador" method="post">
         Numero de factura:
         
         <input name="initnum" class="input-mini" type="text"/>
@@ -88,6 +92,8 @@
     </form>
 
 </div>
+
+
 
 <div class="well" style="margin-left: 15px; margin-top: 15px;">
     <legend>Resetear número de Factura</legend>
