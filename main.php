@@ -11,7 +11,7 @@ ini_set("error_reporting",  E_ALL & ~E_NOTICE);
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Panaderia</title>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/toggle_nav.js"></script>
         <link href="css/factura.css" rel="stylesheet" type="text/css">

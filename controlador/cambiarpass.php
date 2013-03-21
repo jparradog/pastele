@@ -1,9 +1,8 @@
 <?php
 define("RUTA_ABS", dirname(__FILE__));
-include_once (RUTA_ABS."/../../controlador/conexion.php");
-
-$pass1 = $_POST["passinput1"];
-$pass2 = $_POST["passinput2"];
+include_once ("/conexion.php");
+$pass1 ='"' . trim($_POST["passinput1"]) . '"';
+$pass2 ='"' . trim($_POST["passinput2"]) . '"';
 
 
 $conexion = conectar_bd();

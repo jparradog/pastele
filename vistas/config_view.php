@@ -20,7 +20,7 @@
     <legend>Cambiar contraseña Administrador</legend>
 
     <form action="main.php?iu=cambiarpass.php&mdir=controlador" method="post">
-        <label for="textinput1">
+        <label for="passinput1">
             Nueva contraseña
         </label>
         <input name="passinput1" type="password">
