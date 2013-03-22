@@ -15,62 +15,49 @@
 
 
 <div class="well" style="margin-left:15px; margin-top: 15px;">
-
-
     <legend>Cambiar contraseña Administrador</legend>
 
     <form action="main.php?iu=cambiarpass.php&mdir=controlador" method="post">
         <label for="passinput1">
             Nueva contraseña
         </label>
-        <input name="passinput1" type="password">
+        <input name="passinput1" type="password" required>
         <div class="control-group">
             <label for="passinput2">
                 Confirmar Contraseña
             </label>
-            <input name="passinput2" type="password">
+            <input name="passinput2" type="password" required>
         </div>
         <div class="control-group">
-
             <input type="submit" class="btn btn-primary" value="Aceptar">
-
-            <a class="btn btn-primary" href="#">
-                Cancelar
-            </a>
         </div>
+        <input name="tipopass" type="text" value="1" style="display: none">
     </form>
 
 </div>
 
 
 <div class="well" style="margin-left:15px; margin-top: 15px;">
-
-
     <legend>Cambiar contraseña Empleado</legend>
 
-    <form>
-        <label for="textinput1">
+    <form action="main.php?iu=cambiarpass.php&mdir=controlador" method="post">
+        <label for="passimput3">
             Nueva contraseña
         </label>
-        <input name="textinput1" type="password">
+        <input name="passinput3" type="password" required>
         <div class="control-group">
-            <label for="passinput2">
+            <label for="passinput4">
                 Confirmar Contraseña
             </label>
-            <input name="passinput2" type="password">
+            <input name="passinput4" type="password" required>
         </div>
-    </form>
+        <input name="tipopass" type="text" value="2" style="display: none">
     <div class="control-group">
+            <input type="submit"  class="btn btn-primary" value="Aceptar">
+  </a>
     </div>
-    <a class="btn btn-primary" href="#" onclick="">
-        Aceptar
-    </a>
-
-
-    <a class="btn btn-primary" href="#">
-        Cancelar
-    </a>
-
+    </form>
+    
 </div>
 
 
@@ -84,7 +71,7 @@
     <p></p>
     <form action="main.php?iu=reset.php&mdir=controlador" method="post">
         Numero de factura:
-        
+
         <input name="initnum" class="input-mini" type="text"/>
         <p></p>
         <input  type="submit" class="btn btn-primary" value="Aceptar">
