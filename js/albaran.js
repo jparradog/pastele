@@ -201,3 +201,17 @@ function aload_prod_tr(cod, punit,select,subtotal,cantidad){
     
 }
 
+function showTotalRow(){
+    var tbody = document.getElementById('tbody');
+    
+    var lastRow = tbody.lastElementChild;
+    var idLastRow = parseInt(lastRow.id);
+    
+    if(idLastRow < 19){
+        for(i=idLastRow; i < 19 ;i=i+1){
+            $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td></tr>")
+        }
+    }
+
+}
+

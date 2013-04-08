@@ -1,6 +1,6 @@
 <?php
 define("RUTA_ABS", dirname(__FILE__));
-include (RUTA_ABS."/../controlador/redirect.php");
+include (RUTA_ABS . "/../controlador/redirect.php");
 include (RUTA_ABS . "/../controlador/conexion.php");
 include (RUTA_ABS . "/../negocios/factura/traerdoc.php");
 include (RUTA_ABS . "/../negocios/cliente/clienteonfactura.php");
@@ -16,13 +16,21 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Factura Simple</title>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <link media="screen" href="facturasimple.css" rel="stylesheet" type="text/css">
         <link media="print" href="printfacturasimple.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../js/facturasimple.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                showTotalRow();    
+            });
+            
+            
+        </script>
 
-        <script type="text/javascript" src="facturasimple.js"></script>
 
     </head>
     <body>
@@ -94,7 +102,7 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
                         <?php
                         $i = 1;
                         while ($fila = mysql_fetch_assoc($renglones)) {
-                            echo '<tr name="fila"> ';
+                            echo '<tr name="fila" id="'.$i.'"> ';
                             echo '<td>' . $i . '</td>';
                             echo '<td>' . $fila['producto'] . '</td>';
                             echo '<td>' . $fila['iva'] . '</td>';
@@ -111,7 +119,8 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
                     </tbody>
 
                     <thead>
-                        <tr  >
+
+                        <tr style="">
                             <th></th>
                             <th></th>
                             <th></th>
@@ -122,6 +131,7 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
 
 
                     </thead>
+
                 </table>
             </div>
             <div class="botonfilas">       

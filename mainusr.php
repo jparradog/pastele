@@ -14,7 +14,7 @@ include_once (RUTA_ABS . "/controlador/controladorvista.php");
         <script type="text/javascript" src="js/toggle_nav.js"></script>
         <link href="css/factura.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/factura.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="img/bakery_icon.png">
         <script type="text/javascript" src="js/albaran.js"></script>
         <script type="text/javascript" src="js/facturasimple.js"></script>

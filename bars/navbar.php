@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php ?>
 <div id="container">
     <div class="navbar navbar-static-top">
         <div class="navbar-inner">
@@ -12,12 +10,11 @@
             </ul>
             <ul class="nav pull-right">
                 <li><a href="#"><i style="margin-right: 3px;" class="icon-user"></i><?php
-
-if(isset ($_SESSION['admin'])) {
+if (isset($_SESSION['admin'])) {
     echo "Administrador";
 }
 
-if(isset ($_SESSION['usr'])){
+if (isset($_SESSION['usr'])) {
     echo "Empleado";
 }
 ?></a></li>

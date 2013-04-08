@@ -1,13 +1,12 @@
 <?php
 define("RUTA_ABS", dirname(__FILE__));
-include (RUTA_ABS."/../controlador/redirect.php");
-include (RUTA_ABS."/../controlador/conexion.php");
-include (RUTA_ABS."/../negocios/cliente/clienteonfactura.php");
+include (RUTA_ABS . "/../controlador/redirect.php");
+include (RUTA_ABS . "/../controlador/conexion.php");
+include (RUTA_ABS . "/../negocios/cliente/clienteonfactura.php");
 $id = $_POST['cliente'];
 $cliente[] = select_cliente($id); //TRAE EL CLIENTE
 
-include (RUTA_ABS."/../negocios/facturasimple/altafacturasimple.php");
-
+include (RUTA_ABS . "/../negocios/facturasimple/altafacturasimple.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +18,15 @@ include (RUTA_ABS."/../negocios/facturasimple/altafacturasimple.php");
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <link media="screen" href="facturasimple.css" rel="stylesheet" type="text/css">
         <link media="print" href="printfacturasimple.css" rel="stylesheet" type="text/css">
-
-        <script type="text/javascript" src="facturasimple.js"></script>
-
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/facturasimple.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                showTotalRow();    
+            });
+            
+            
+        </script>
     </head>
     <body>
 
@@ -92,7 +97,7 @@ include (RUTA_ABS."/../negocios/facturasimple/altafacturasimple.php");
                         <?php
                         $i = 1;
                         while ($i <= $_POST["inputidx"]) {
-                            echo '<tr id="2" name="fila"> ';
+                            echo '<tr name="fila" id="'.$i.'"> ';
                             echo '<td>' . $i . '</td>';
                             echo '<td>' . $_POST['inputproducto' . $i] . '</td>';
                             echo '<td>' . $_POST['selectiva' . $i] . '</td>';
@@ -109,17 +114,18 @@ include (RUTA_ABS."/../negocios/facturasimple/altafacturasimple.php");
                     </tbody>
 
                     <thead>
-                        <tr  >
+                        <tr>
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th  >Cuota IVA €&nbsp<output id="totaliva"><?php echo $_POST['totaliva'] ?></output></th>
-                            <th >Base Imponible €&nbsp<output id="totalneto"><?php echo $_POST['totalneto'] ?></output></th>
-                            <th > Importe Total €&nbsp<output id="total"><?php echo $_POST['total'] ?></output> </th>
+                            <th>Cuota IVA €&nbsp<output id="totaliva"><?php echo $_POST['totaliva'] ?></output></th>
+                            <th>Base Imponible €&nbsp<output id="totalneto"><?php echo $_POST['totalneto'] ?></output></th>
+                            <th>Importe Total €&nbsp<output id="total"><?php echo $_POST['total'] ?></output> </th>
                         </tr>
 
 
                     </thead>
+
                 </table>
             </div>
             <div class="botonfilas">       

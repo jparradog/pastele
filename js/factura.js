@@ -295,9 +295,28 @@ function load_prod_tr(outidprod, outpunit, inputprod,outiva,id){
     
     
 }
+/*
+ * ---------------------------------------------------
+ * Esta funcion hace que solo puedan ingresarse
+ * numeros en los inputs y no otro caracter
+ * ---------------------------------------------------
+ */
 function justNumbers(e) {
     var keynum = window.event ? window.event.keyCode : e.which;
     if ( keynum == 8 || keynum == 46 ) return true;
     return /\d/.test(String.fromCharCode(keynum));
 }
 
+function showTotalRow(){
+    var tbody = document.getElementById('tbody');
+    
+    var lastRow = tbody.lastElementChild;
+    var idLastRow = parseInt(lastRow.id);
+    
+    if(idLastRow < 17){
+        for(i=idLastRow; i < 17 ;i=i+1){
+            $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
+        }
+    }
+
+}

@@ -23,7 +23,15 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <link media="screen" href="factura.css" rel="stylesheet" type="text/css">
         <link media="print" href="printfactura.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="factura.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/factura.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                showTotalRow();    
+            });
+            
+            
+        </script>
         
     </head>
     <body>
@@ -99,8 +107,9 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
 
                     <tbody id="tbody">
                         <?php
+                        $i = 1;
                         while($fila = mysql_fetch_assoc($renglones)){
-                            echo '<tr name="fila"> ';
+                            echo '<tr name="fila" id="'.$i++.'"> ';
                             echo '<td>'.$fila['idproducto'].'</td>';
                             echo '<td>'.select_prod($fila["idproducto"]).'</td>';
                             echo '<td>'.$fila['punitario'].'</td>';

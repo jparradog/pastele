@@ -21,7 +21,15 @@ include (RUTA_ABS."/../negocios/factura/altafactura.php");
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <link media="screen" href="factura.css" rel="stylesheet" type="text/css">
         <link media="print" href="printfactura.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="factura.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/factura.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                showTotalRow();    
+            });
+            
+            
+        </script>
         
     </head>
     <body>
@@ -109,7 +117,7 @@ include (RUTA_ABS."/../negocios/factura/altafactura.php");
                         <?php
                         $i=2;
                         while($i<=$_POST["inputidx"]){
-                            echo '<tr id="2" name="fila"> ';
+                            echo '<tr name="fila" id="'.$i.'"> ';
                             echo '<td>'.$_POST['outidprod'.$i].'</td>';
                             echo '<td>'.select_prod($_POST["outidprod".$i]).'</td>';
                             echo '<td>'.$_POST['outpunit'.$i].'</td>';

@@ -3,25 +3,22 @@ define("RUTA_ABS", dirname(__FILE__));
 include_once (RUTA_ABS . "/controlador/redirect.php");
 include_once (RUTA_ABS . "/controlador/controladorvista.php");
 
-ini_set("error_reporting",  E_ALL & ~E_NOTICE);
+ini_set("error_reporting", E_ALL & ~E_NOTICE);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Panaderia</title>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/toggle_nav.js"></script>
-        <link href="css/factura.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/factura.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="shortcut icon" href="img/bakery_icon.png">
         <script type="text/javascript" src="js/albaran.js"></script>
         <script type="text/javascript" src="js/facturasimple.js"></script>
-        
-
+        <script type="text/javascript" src="js/bootstrap.js"></script>
     </head>
     <body onload="fecha()"> 
 
@@ -44,7 +41,7 @@ ini_set("error_reporting",  E_ALL & ~E_NOTICE);
                             include ($vistas_dir . $vista);
                         } else {
                             ?>
-                        
+
                         <?php } ?>
                     </div>
                 </div>

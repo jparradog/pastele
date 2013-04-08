@@ -1,6 +1,7 @@
 <?php
 define("RUTA_ABS", dirname(__FILE__));
-include_once ("/conexion.php");
+
+include (RUTA_ABS."/controlador/conexion.php");
 $pass1 = '"' . trim($_POST["passinput1"]) . '"';
 $pass2 = '"' . trim($_POST["passinput2"]) . '"';
 
@@ -17,7 +18,7 @@ if ($tipopass == "1") {
         $msg = "La contraseña del Administrador ha cambiado.";
         $style = "success";
     } else {
-        $msg = "Las contraseñas no coinciden. <a href='main.php?iu=confnumfactura.php&mdir=controlador'>Volver</a>";
+        $msg = "Las contraseñas no coinciden. <a href='main.php?iu=config_view.php&mdir=vistas'>Volver</a>";
         $style = "error";
     }
 } else {
@@ -27,7 +28,7 @@ if ($tipopass == "1") {
         $msg = "La contraseña del Empleado ha cambiado.";
         $style = "success";
     } else {
-        $msg = "Las contraseñas no coinciden. <a href='main.php?iu=confnumfactura.php&mdir=controlador'>Volver</a>";
+        $msg = "Las contraseñas no coinciden. <a href='main.php?iu=config_view.php&mdir=vistas'>Volver</a>";
         $style = "error";
     }
 }

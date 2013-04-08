@@ -1,6 +1,5 @@
 <?php
 
-
 //Datos de Cliente
 $cant_renglones = $_POST['inputidx'];
 $idcliente = $id;
@@ -21,16 +20,15 @@ $conexion = conectar_bd();
 $sql_numerofactura = "SELECT num FROM numfact";
 //$sql_numerofactura = "SELECT MAX(numerofactura) FROM factura";
 //Asigno el resultado de la consulta a $result
-    $result = mysql_query($sql_numerofactura);
-    $fila = mysql_fetch_array($result);
-    $numerofactura = $fila['num'];
-    if ($numerofactura == NULL || $numerofactura == 0) {
-        $numerofactura = 1;
-        
-    } else {
-        
-        $numerofactura++;
-    }
+$result = mysql_query($sql_numerofactura);
+$fila = mysql_fetch_array($result);
+$numerofactura = $fila['num'];
+if ($numerofactura == NULL || $numerofactura == 0) {
+    $numerofactura = 1;
+} else {
+
+    $numerofactura++;
+}
 $query_update_num = "UPDATE numfact SET num = $numerofactura WHERE idnumfact=1";
 mysql_query($query_update_num);
 

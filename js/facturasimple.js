@@ -1,6 +1,10 @@
+/**********************************************************
+ *                                                        *  
+ * La variable IDX es la que lleva el conteo de las filas *
+ *                                                        *
+ **********************************************************/
+
 var idx = 1;
-
-
 
 function scalculoneto(subtotal,iva,valoriva,neto){
     var resneto;
@@ -11,8 +15,6 @@ function scalculoneto(subtotal,iva,valoriva,neto){
     
     neto.value =  resneto.toFixed(2);
     valoriva.value = resvaloriva.toFixed(2);
-    
-   
     
     scalculototal();
     scalculototaliva();
@@ -134,8 +136,6 @@ function sgenerafila(){
     td8.innerHTML = "€&nbsp";
     td8.innerHTML = td8.innerHTML + '<input required="required"  id="inputsubtot'+parseInt(idx + 1)+'" name="inputsubtot'+parseInt(idx + 1)+'"   class="input-mini" oninput="scalculoneto(this.value,selectiva'+parseInt(idx + 1)+'.value,outvaloriva'+parseInt(idx + 1)+',outneto'+parseInt(idx + 1)+');" type="text" onkeypress="return justNumbers(event);">';
   
-  
-  
     tr.appendChild(td1); //Codigo producto
     tr.appendChild(td2); //Producto
     tr.appendChild(td3); //%iva
@@ -144,8 +144,6 @@ function sgenerafila(){
     tr.appendChild(td8); //Subtotal
     
     return tr;
-  
-  
 }
 
 function sdelfila(){
@@ -159,9 +157,21 @@ function sdelfila(){
         calculototaliva();
         calculototalneto();
     }
-       
     
+}
+
+function showTotalRow(){
+    var tbody = document.getElementById('tbody');
     
+    var lastRow = tbody.lastElementChild;
+    var idLastRow = parseInt(lastRow.id);
+    
+    if(idLastRow < 18){
+        for(i=idLastRow; i < 18 ;i=i+1){
+            $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
+        }
+    }
+
 }
 
 
