@@ -1,16 +1,15 @@
 <?php
-
 define("RUTA_ABS", dirname(__FILE__));
-include (RUTA_ABS."/../controlador/redirect.php");
-include (RUTA_ABS."/../controlador/conexion.php");
-include (RUTA_ABS."/../negocios/factura/traerdoc.php");
-include (RUTA_ABS."/../negocios/cliente/clienteonfactura.php");
-include (RUTA_ABS."/../negocios/producto/productoonfactura.php");
+include (RUTA_ABS . "/../controlador/redirect.php");
+include (RUTA_ABS . "/../controlador/conexion.php");
+include (RUTA_ABS . "/../negocios/factura/traerdoc.php");
+include (RUTA_ABS . "/../negocios/cliente/clienteonfactura.php");
+include (RUTA_ABS . "/../negocios/producto/productoonfactura.php");
 
 
-$doc = traerdoc($_GET["idfact"],"factura"); //PASO EL ID y LA TABLA
+$doc = traerdoc($_GET["idfact"], "factura"); //PASO EL ID y LA TABLA
 $cliente = select_cliente($doc['idcliente']);
-$renglones = traer_renglones($doc["idfactura"],"factura")
+$renglones = traer_renglones($doc["idfactura"], "factura")
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
             
             
         </script>
-        
+
     </head>
     <body>
 
@@ -51,7 +50,7 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
 
 
                 <form class="form-inline" style="margin: 1px">
-                    <label for="inputcliente"><b>Cliente: </b></label> <label id="cliente" /><?php echo $cliente['nombre']." ".$cliente['apellido']." ".$cliente['apellido2']; ?></label>      
+                    <label for="inputcliente"><b>Cliente: </b></label> <label id="cliente" /><?php echo $cliente['nombre'] . " " . $cliente['apellido'] . " " . $cliente['apellido2']; ?></label>      
 
                 </form>
 
@@ -61,7 +60,7 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
                 </form>  
 
                 <form class="form-inline" style="margin: 1px">          
-                    <label for="direccion"><b>Dirección: </b> </label>  <label id="dir" name="dir"> <?php echo $cliente['calle']." ".$cliente['numero']; ?> </label> 
+                    <label for="direccion"><b>Dirección: </b> </label>  <label id="dir" name="dir"> <?php echo $cliente['calle'] . " " . $cliente['numero']; ?> </label> 
                 </form>     
 
                 <form class="form-inline" style="margin: 1px">  
@@ -70,13 +69,13 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
                 </form>     
                 <form class="form-inline" style="margin: 1px">     
 
-                    
+
 
                 </form> 
             </div> 
             <div class="titulofactura">
                 <h1 class="titulo">Factura  </h1>    
-                 <address >
+                <address >
                     <strong>Garcia Laspina Omar Hector</strong><br>
                     N.I.F. 77656834-W<br>
                     C/Torre Marcelo,4- Telf. 639023973-950337693<br>
@@ -100,7 +99,7 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
                             <th>Cant.</th>
                             <th>Iva</th>
                             <th>Cuota Iva</th>
-                             <th>Base Imponible</th>
+                            <th>Base Imponible</th>
                             <th>Importe</th>
                         </tr>
                     </thead>
@@ -108,53 +107,57 @@ $renglones = traer_renglones($doc["idfactura"],"factura")
                     <tbody id="tbody">
                         <?php
                         $i = 1;
-                        while($fila = mysql_fetch_assoc($renglones)){
-                            echo '<tr name="fila" id="'.$i++.'"> ';
-                            echo '<td>'.$fila['idproducto'].'</td>';
-                            echo '<td>'.select_prod($fila["idproducto"]).'</td>';
-                            echo '<td>'.$fila['punitario'].'</td>';
-                            echo '<td>'.$fila['cantidad'].'</td>';
-                            echo '<td>'.$fila['iva'].'</td>';
-                            echo '<td>'.$fila['valoriva'].'</td>';
-                            echo '<td>'.$fila['neto'].'</td>';
-                            echo '<td>'.$fila['total'].'</td>';
+                        while ($fila = mysql_fetch_assoc($renglones)) {
+                            echo '<tr name="fila" id="' . $i++ . '"> ';
+                            echo '<td>' . $fila['idproducto'] . '</td>';
+                            echo '<td>' . select_prod($fila["idproducto"]) . '</td>';
+                            echo '<td>' . $fila['punitario'] . '</td>';
+                            echo '<td>' . $fila['cantidad'] . '</td>';
+                            echo '<td>' . $fila['iva'] . '</td>';
+                            echo '<td>' . $fila['valoriva'] . '</td>';
+                            echo '<td>' . $fila['neto'] . '</td>';
+                            echo '<td>' . $fila['total'] . '</td>';
                             echo '</tr>';
-                            
                         }
-                        
-                        
                         ?>
                     </tbody>
-
-                    <thead>
+                </table>
+                <table class="table table-bordered" style="margin: 5 1 5 1;">
+                    <thead style="background-color:#f5f5f5;">
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>Cuota IVA <output id="totaliva"><?php echo "€".$doc['totaliva'] ?></output></th>
-                            <th>Base Imponible <output id="totalneto"><?php echo "€".$doc['totalneto'] ?></output></th>
-                            <th>Importe Total <output id="total"><?php echo "€".$doc['total'] ?></output> </th>
+                            <th colspan="2">Total Bruto</th>
+                            <th>Base imponible</th>
+                            <th>% I.V.A</th>
+                            <th>Importe IVA</th>
+                            <th>Total factura</th>
                         </tr>
-<!--                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th ></th>
-                            <th></th>                            
-                            <th ></th>
-                            <th  ></th>
-                        </tr>-->
-
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <?php echo "€ " . $doc['totalneto'] ?>
+                            </td>
+                            
+                            <td>
+                                asd
+                            </td>
+                            <td>
+                                asd
+                            </td>
+                            <td>
+                                <?php echo "€ " . $doc['totaliva']?>
+                            </td>
+                            <td>
+                                <?php echo "€" . $doc['total'] ?>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="botonfilas">       
-             
-                    <button onclick="window.print();" class="btn btn-primary" type="button"> <i class=" icon-print"></i> Imprimir</button> 
-                    <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=modtablafactura.php&mdir=negocios&dir=factura','_self');" class="btn " type="button"> <i class="icon-remove"></i> Cancelar</button>    
+
+                <button onclick="window.print();" class="btn btn-primary" type="button"> <i class=" icon-print"></i> Imprimir</button> 
+                <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=modtablafactura.php&mdir=negocios&dir=factura','_self');" class="btn " type="button"> <i class="icon-remove"></i> Cancelar</button>    
                 </p>    
             </div>
 
