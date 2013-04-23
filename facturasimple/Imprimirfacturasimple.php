@@ -9,7 +9,11 @@ include (RUTA_ABS . "/../negocios/producto/productoonfactura.php");
 
 $doc = traerdoc($_GET["idfact"], "facturasimple"); //PASO EL ID y LA TABLA
 $cliente = select_cliente($doc['idcliente']);
-$renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
+$renglones = traer_renglones($doc["idfacturasimple"], "facturasimple");
+$iva_array = traer_iva($doc["idfacturasimple"], "renglon_facturasimple", "idfacturasimple");
+$array_iva = array();
+$array_valoriva = array();
+$array_neto = array();
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,10 +103,12 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
                     </thead>
 
                     <tbody id="tbody">
+
                         <?php
                         $i = 1;
+
                         while ($fila = mysql_fetch_assoc($renglones)) {
-                            echo '<tr name="fila" id="'.$i.'"> ';
+                            echo '<tr name="fila" id="' . $i . '"> ';
                             echo '<td>' . $i . '</td>';
                             echo '<td>' . $fila['producto'] . '</td>';
                             echo '<td>' . $fila['iva'] . '</td>';
@@ -110,28 +116,53 @@ $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple")
                             echo '<td>' . $fila['neto'] . '</td>';
                             echo '<td>' . $fila['total'] . '</td>';
                             echo '</tr>';
+                            array_push($array_iva, $fila["iva"]);
                             $i++;
                         }
+                        $array_iva = array_unique($array_iva);
+                        
+
+                        $renglones = traer_renglones($doc["idfacturasimple"], "facturasimple");
+                        $i=0;
+                        foreach ($array_iva as $valor) {
+                            while ($fila = mysql_fetch_assoc($renglones)) {
+                                if ($valor == $fila["iva"]) {
+                                    array_push($array_valoriva,$array_valoriva[$i]=0);
+                                    array_push($array_neto,$array_neto[$i]=0);
+                                    $array_valoriva[$i] =$array_valoriva[$i] + $fila["valoriva"];
+                                    $array_neto[$i]= $array_neto[$i] + $fila["neto"];
+                                }
+                                $i++;
+                            }
+                        }
+                        print_r(array_values($array_iva));
+                        print_r(array_values($array_valoriva));
+                        print_r(array_values($array_neto));
                         ?>
 
 
 
                     </tbody>
+                </table>
+                <!-- TABLA TOTALES -->
 
-                    <thead>
-
-                        <tr style="">
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th  >Cuota IVA €&nbsp<output id="totaliva"><?php echo $doc['totaliva'] ?></output></th>
-                            <th >Base Imponible €&nbsp<output id="totalneto"><?php echo $doc['totalneto'] ?></output></th>
-                            <th > Importe Total €&nbsp<output id="total"><?php echo $doc['total'] ?></output> </th>
+                <table class="table table-bordered" style="margin:5 1 5 1;">
+                    <thead style="background-color:#f5f5f5;">
+                        <tr>
+                            <th colspan="2">Total Bruto</th>
+                            <th>Base imponible</th>
+                            <th>% I.V.A</th>
+                            <th>Importe IVA</th>
+                            <th>Total factura</th>
                         </tr>
-
-
                     </thead>
+                    <tbody>
 
+
+                        <?php
+                        ?>
+
+                    </tbody>
                 </table>
             </div>
             <div class="botonfilas">       
