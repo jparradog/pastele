@@ -7,11 +7,11 @@ $mwBack="mwBackup ver.1.3";		// Aparece en la cabecera del archivo backup.
 
 $host ="localhost";				// Host para la conexion a  MySQL.
 
-$usuario ="pastele1_trium1";				// usuario  para la conexion a MySQL. 
+$usuario ="pastele2_root";				// usuario  para la conexion a MySQL.
 //$usuario ="root";
-$passwd = "f+#5F)Rq+fUI";					// Password para la conexion a MySQL.
+$passwd = "8Cj7G8u9qm";					// Password para la conexion a MySQL.
 //$passwd = "";
-$bd = "pastele1_panaderia";					// Base de Datos que se seleccionar�.
+$bd = "pastele2_dbpastele";					// Base de Datos que se seleccionar�.
 
 $dia = date("Y-m-d");
 $hora = date("H-i-s");
