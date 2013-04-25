@@ -115,19 +115,19 @@ include (RUTA_ABS."/../negocios/factura/altafactura.php");
                             <td><?php echo $_POST["outsubtot1"]; ?></td> <!--OUTSUBTOT -->
                         </tr>
                         <?php
-                        $i=2;
-                        while($i<=$_POST["inputidx"]){
-                            echo '<tr name="fila" id="'.$i.'"> ';
-                            echo '<td>'.$_POST['outidprod'.$i].'</td>';
-                            echo '<td>'.select_prod($_POST["outidprod".$i]).'</td>';
-                            echo '<td>'.$_POST['outpunit'.$i].'</td>';
-                            echo '<td>'.$_POST['inputcant'.$i].'</td>';
-                            echo '<td>'.$_POST['outiva'.$i].'</td>';
-                            echo '<td>'.$_POST['outvaloriva'.$i].'</td>';
-                            echo '<td>'.$_POST['outneto'.$i].'</td>';
-                            echo '<td>'.$_POST['outsubtot'.$i].'</td>';
+                        $t=2;
+                        while($t<=$_POST["inputidx"]){
+                            echo '<tr name="fila" id="'.$t.'"> ';
+                            echo '<td>'.$_POST['outidprod'.$t].'</td>';
+                            echo '<td>'.select_prod($_POST["outidprod".$t]).'</td>';
+                            echo '<td>'.$_POST['outpunit'.$t].'</td>';
+                            echo '<td>'.$_POST['inputcant'.$t].'</td>';
+                            echo '<td>'.$_POST['outiva'.$t].'</td>';
+                            echo '<td>'.$_POST['outvaloriva'.$t].'</td>';
+                            echo '<td>'.$_POST['outneto'.$t].'</td>';
+                            echo '<td>'.$_POST['outsubtot'.$t].'</td>';
                             echo '</tr>';
-                            $i++;
+                            $t++;
                         }
                         
                         

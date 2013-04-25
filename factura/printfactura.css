@@ -1,9 +1,8 @@
-
 @page{
     margin: 0pt;
     margin-top: 5pt;
     font-family: sans-serif;
-    
+    font-size: 5pt;
 }
 tr{
     height: auto;
@@ -24,7 +23,7 @@ root {
     float:right;
     margin-right: 5px;
     height: auto;
-    
+    font-size: 9pt;
     
 }
 

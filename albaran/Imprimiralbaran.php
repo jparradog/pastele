@@ -106,9 +106,9 @@ $renglones = traer_renglones($doc["idalbaran"], "albaran")
                     <tbody id="tbody">
 
                         <?php
-                        $i = 1;
+                        $t = 1;
                         while ($fila = mysql_fetch_assoc($renglones)) {
-                            echo '<tr name="fila" id="'.$i++.'"> ';
+                            echo '<tr name="fila" id="'.$t++.'"> ';
                             echo '<td>' . $fila['idproducto'] . '</td>';
                             echo '<td>' . select_prod($fila["idproducto"]) . '</td>';
                             echo '<td>' . $fila['punitario'] . '</td>';

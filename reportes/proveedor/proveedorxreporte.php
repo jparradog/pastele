@@ -12,8 +12,8 @@
         $añoactual = date("Y");
         
         //Desde 1990 hasta el añoactual-1 , muestro el option
-        for ($i = 1990; $i < $añoactual; $i++) {
-            echo '<option value=' . $i .'>' . $i . '</option>';
+        for ($t = 1990; $t < $añoactual; $t++) {
+            echo '<option value=' . $t .'>' . $t . '</option>';
         }
         
         //Selecciono por defecto el año actual

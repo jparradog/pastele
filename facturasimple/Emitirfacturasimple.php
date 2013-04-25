@@ -95,17 +95,17 @@ include (RUTA_ABS . "/../negocios/facturasimple/altafacturasimple.php");
 
                     <tbody id="tbody">
                         <?php
-                        $i = 1;
-                        while ($i <= $_POST["inputidx"]) {
-                            echo '<tr name="fila" id="'.$i.'"> ';
-                            echo '<td>' . $i . '</td>';
-                            echo '<td>' . $_POST['inputproducto' . $i] . '</td>';
-                            echo '<td>' . $_POST['selectiva' . $i] . '</td>';
-                            echo '<td>' . $_POST['outvaloriva' . $i] . '</td>';
-                            echo '<td>' . $_POST['outneto' . $i] . '</td>';
-                            echo '<td>' . $_POST['inputsubtot' . $i] . '</td>';
+                        $t = 1;
+                        while ($t <= $_POST["inputidx"]) {
+                            echo '<tr name="fila" id="'.$t.'"> ';
+                            echo '<td>' . $t . '</td>';
+                            echo '<td>' . $_POST['inputproducto' . $t] . '</td>';
+                            echo '<td>' . $_POST['selectiva' . $t] . '</td>';
+                            echo '<td>' . $_POST['outvaloriva' . $t] . '</td>';
+                            echo '<td>' . $_POST['outneto' . $t] . '</td>';
+                            echo '<td>' . $_POST['inputsubtot' . $t] . '</td>';
                             echo '</tr>';
-                            $i++;
+                            $t++;
                         }
                         ?>
 

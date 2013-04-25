@@ -4,9 +4,24 @@
     margin: 0;
     font-family: sans-serif;
 }
+table tr {
+    height: 25px;
+}
+address{
+    font-size: 9pt;
+}
+form{
+    font-size: 9pt;
+}
+
+
+label{
+    font-size: 9pt;
+}
 
 #header{
-    height: 155px;
+    height: 120px;
+    margin-top:10px;
 }
 root { 
     display: block;
@@ -18,8 +33,9 @@ root {
 
 .datosfactura{
     float:right;
-    margin-right: 5px;
+    margin-right: 30px;
     height: auto;
+    font-size: 9pt;
     
 }
 
@@ -27,17 +43,20 @@ root {
 .titulo{
  margin-left: 30%;
  margin-right: 50%;
+ 
 }
 
 .titulofactura{
     margin-left: 30px; 
     height: 170px;
+    font-size: 9pt;
     
 }
 
 .tablafactura{
     margin-left: 30px;
     margin-right: 30px;
+    font-size: 9pt;
 }
 
 .botonfilas{

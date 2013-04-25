@@ -58,17 +58,17 @@ $fila = mysql_fetch_assoc($result);
 //Guardo el ultimo id de domicilio
 $ultimo_id = $fila['MAX(idfactura)'];
 
-$i = 1;
-while ($i <= $cant_renglones) {
+$t = 1;
+while ($t <= $cant_renglones) {
 
-    $idprod = $_POST['outidprod' . $i];
+    $idprod = $_POST['outidprod' . $t];
 
-    $punit = $_POST['outpunit' . $i];
-    $cant = $_POST['inputcant' . $i];
-    $iva = $_POST['outiva' . $i];
-    $valoriva = $_POST['outvaloriva' . $i];
-    $neto = $_POST['outneto' . $i];
-    $subtot = $_POST['outsubtot' . $i];
+    $punit = $_POST['outpunit' . $t];
+    $cant = $_POST['inputcant' . $t];
+    $iva = $_POST['outiva' . $t];
+    $valoriva = $_POST['outvaloriva' . $t];
+    $neto = $_POST['outneto' . $t];
+    $subtot = $_POST['outsubtot' . $t];
 
     $sql_renglon = "INSERT INTO renglon_factura (idproducto,punitario,cantidad,total,neto,idfactura,valoriva,iva)
     VALUES ($idprod,$punit,$cant,$subtot,$neto,$ultimo_id,$valoriva,$iva)";
@@ -77,7 +77,7 @@ while ($i <= $cant_renglones) {
     if (mysql_query($sql_renglon)) {
         $renglon = true;
     }
-    $i++;
+    $t++;
 }
 
 

@@ -11,9 +11,9 @@ $conexion = conectar_bd();
 //al primer id grabado en la bd de la tabla producto
 $idprod = 1;
 //Recorro desde la posición 0 hasta la cantidad de elementos
-for($i=0;$i<$k;$i++){
+for($t=0;$t<$k;$t++){
     //Armo la consulta: 
-    $sql = "UPDATE listaprecio SET precio = $_POST[$i] WHERE idcliente = $idcliente AND idproducto = $idprod";
+    $sql = "UPDATE listaprecio SET precio = $_POST[$t] WHERE idcliente = $idcliente AND idproducto = $idprod";
     //Ejecuto la consulta
     mysql_query($sql);
     //Aumento el id del producto

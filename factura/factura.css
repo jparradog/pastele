@@ -5,7 +5,10 @@ root {
     height: 165px;
 }
 .fila{
-    height: 40px;
+    height: 30px;
+}
+tr{
+    height: 30px;
 }
 .msg-factura{
     padding: 8px 35px 8px 14px;

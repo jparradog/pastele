@@ -2,11 +2,12 @@ root {
     display: block;
 }
 #header{
-    height: 165px;
+    height: 120px;
 }
 .fila{
     height: 40px;
 }
+
 .datosfactura{
  float: right;
  margin-right:30px;
@@ -31,6 +32,7 @@ root {
  margin-left: 30px;
  
  
+ 
 }
 .titulo{
  margin-left: 50%;
@@ -41,7 +43,6 @@ root {
 .tablafactura{
   margin-left: 30px;
   margin-right: 30px;
-
   
   
 }
@@ -63,4 +64,8 @@ root {
     border: 1px solid #000;
     background-color: #99CCFF;
 }
-
+/* Este muestra los totales del pie de factura en negrita */
+.totals{
+    font-size: 20px;
+    
+}

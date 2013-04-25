@@ -54,15 +54,15 @@ $fila = mysql_fetch_assoc($result);
     //Guardo el ultimo id de domicilio
     $ultimo_id = $fila['MAX(idalbaran)'];
 
-$i=1;
+$t=1;
 
-while($i<=$cant_renglones){
+while($t<=$cant_renglones){
 
-    $idprod = $_POST['outidprod' . $i];
+    $idprod = $_POST['outidprod' . $t];
     
-    $punit = $_POST['outpunit' . $i];
-    $cant = $_POST['inputcant' . $i];
-    $subtot = $_POST['outsubtot' . $i];
+    $punit = $_POST['outpunit' . $t];
+    $cant = $_POST['inputcant' . $t];
+    $subtot = $_POST['outsubtot' . $t];
 
     $sql_renglon = "INSERT INTO renglon_albaran (idproducto,punitario,cantidad,total,idalbaran)
     VALUES ($idprod,$punit,$cant,$subtot,$ultimo_id)";
@@ -71,7 +71,7 @@ while($i<=$cant_renglones){
     if(mysql_query($sql_renglon)){
         $renglon = true;
     }
-     $i++;
+     $t++;
 }
     
 

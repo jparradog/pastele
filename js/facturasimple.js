@@ -71,7 +71,7 @@ function saddfila(){
     var tbody = document.getElementById('tbody');       
      
     //var celdas = document.getElementById(1).innerHTML;
-    if (idx <=17){
+    if (idx < 18){
         var newfila = sgenerafila();
         idx = idx +1;
         tbody.appendChild(newfila);
@@ -166,12 +166,11 @@ function showTotalRow(){
     var lastRow = tbody.lastElementChild;
     var idLastRow = parseInt(lastRow.id);
     
-    if(idLastRow < 18){
-        for(i=idLastRow; i < 18 ;i=i+1){
-            $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
+    if(idLastRow < 17){
+        for(i=idLastRow; i < 17 ;i=i+1){
+            $('#tbody').append("<tr name='fila' id="+(i+1)+" style='height:36px;'><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
         }
     }
-
 }
 
 

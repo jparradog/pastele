@@ -61,14 +61,14 @@ $fila = mysql_fetch_assoc($result);
     
     $ultimo_id = $fila['MAX(idfacturasimple)'];
 
-$i=1;
-while($i<=$cant_renglones){
+$t=1;
+while($t<=$cant_renglones){
     
-    $prod = '"'.$_POST['inputproducto'.$i].'"';
-    $iva = $_POST['selectiva'.$i];
-    $valoriva = $_POST['outvaloriva'.$i];
-    $neto = $_POST['outneto'.$i];
-    $subtot = $_POST['inputsubtot'.$i];
+    $prod = '"'.$_POST['inputproducto'.$t].'"';
+    $iva = $_POST['selectiva'.$t];
+    $valoriva = $_POST['outvaloriva'.$t];
+    $neto = $_POST['outneto'.$t];
+    $subtot = $_POST['inputsubtot'.$t];
 
     $sql_renglon = "INSERT INTO renglon_facturasimple (producto,iva,neto,valoriva,total,idfacturasimple)
     VALUES ($prod,$iva,$neto,$valoriva,$subtot,$ultimo_id)";
@@ -77,7 +77,7 @@ while($i<=$cant_renglones){
     if(mysql_query($sql_renglon)){
         $renglon = true;
     }
-     $i++;
+     $t++;
 }
     
 

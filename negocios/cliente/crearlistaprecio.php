@@ -11,11 +11,11 @@ $conexion = conectar_bd();
 //al primer id grabado en la bd de la tabla producto
 $idprod = 1;
 //Recorro desde la posición 0 hasta la cantidad de elementos
-for($i=0;$i<$k;$i++){
+for($t=0;$t<$k;$t++){
     //Armo la consulta: Insertar en lista de precios el id del cliente
     // el id del producto y el precio asociado a ese producto.
     $sql = "INSERT INTO listaprecio (idcliente,idproducto,precio) VALUES
-        ($idcliente,$idprod,$_POST[$i])";
+        ($idcliente,$idprod,$_POST[$t])";
     //Ejecuto la consulta
     mysql_query($sql);
     //Aumento el id del producto
