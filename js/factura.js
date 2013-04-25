@@ -72,7 +72,7 @@ function addfila(){
     var tbody = document.getElementById('tbody');       
      
     //var celdas = document.getElementById(1).innerHTML;
-    if(idx<=16){
+    if(idx<=15){
         var newfila = generafila();
         idx = idx +1;
         tbody.appendChild(newfila);
@@ -313,8 +313,8 @@ function showTotalRow(){
     var lastRow = tbody.lastElementChild;
     var idLastRow = parseInt(lastRow.id);
     
-    if(idLastRow < 17){
-        for(i=idLastRow; i < 17 ;i=i+1){
+    if(idLastRow < 16){
+        for(i=idLastRow; i < 16 ;i=i+1){
             $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
         }
     }
