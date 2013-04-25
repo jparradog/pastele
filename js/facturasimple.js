@@ -71,20 +71,21 @@ function saddfila(){
     var tbody = document.getElementById('tbody');       
      
     //var celdas = document.getElementById(1).innerHTML;
-<<<<<<< HEAD
-    if (idx < 18){
-=======
-    if (idx <=16){
->>>>>>> 9d670708a175696a4a691d4ae7f7fe1782d1cff3
-        var newfila = sgenerafila();
-        idx = idx +1;
-        tbody.appendChild(newfila);
-        inputidx = document.getElementById("inputidx");
-        inputidx.value = parseInt(idx);
-        document.getElementById('inputproducto'+ idx).focus();
-    } else{
-        alert("No es posible agregar mas filas.");
-    }
+
+    
+
+        if (idx <=16){
+
+            var newfila = sgenerafila();
+            idx = idx +1;
+            tbody.appendChild(newfila);
+            inputidx = document.getElementById("inputidx");
+            inputidx.value = parseInt(idx);
+            document.getElementById('inputproducto'+ idx).focus();
+        } else{
+            alert("No es posible agregar mas filas.");
+        }
+    
 }
 
 
@@ -172,11 +173,9 @@ function showTotalRow(){
     
     if(idLastRow < 17){
         for(i=idLastRow; i < 17 ;i=i+1){
-<<<<<<< HEAD
             $('#tbody').append("<tr name='fila' id="+(i+1)+" style='height:36px;'><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
-=======
-            $('#tbody').append("<tr style='height:37px;'><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
->>>>>>> 9d670708a175696a4a691d4ae7f7fe1782d1cff3
+           
+
         }
     }
 }

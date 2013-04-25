@@ -88,7 +88,7 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
         <!-- CUERPO DE LA FACTURA-->       
         <div id="container">
             <div class="tablafactura" style="margin-top: 1px">
-                <table class="table table-hover" style="margin-top: 1px">
+                <table class="table table-bordered" style="margin-top: 1px">
 
                     <thead>
 
