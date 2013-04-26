@@ -2,13 +2,16 @@ root {
     display: block;
 }
 #header{
-    height: 165px;
+    height: 120px;
+}
+address{
+    margin-top: -50px;
 }
 .fila{
     height: 30px;
 }
 tr{
-    height: 30px;
+    height: 20px;
 }
 .msg-factura{
     padding: 8px 35px 8px 14px;
@@ -61,4 +64,9 @@ tr{
  float: left; 
  bottom: 70%;
  margin-left: 30px;
+}
+
+.totals{
+    font-size: 20px;
+    
 }

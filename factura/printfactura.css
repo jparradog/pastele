@@ -4,19 +4,26 @@
     font-family: sans-serif;
     font-size: 5pt;
 }
-tr{
-    height: auto;
-}
+
 
 label{
     font-size: 9pt;
 }
-#header{
-    height: 165px;
-}
 root { 
     display: block;
+}
+#header{
+    height: 120px;
+}
+address{
+    margin-top: -50px;
     font-size: 9pt;
+}
+.fila{
+    height: 30px;
+}
+tr{
+    height: 20px;
 }
 
 .datosfactura{
@@ -27,9 +34,7 @@ root {
     
 }
 
-address{
-    font-size: 9pt;
-}
+
 .titulo{
  margin-left: 30%;
  margin-right: 50%;

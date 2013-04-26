@@ -5,11 +5,16 @@ include (RUTA_ABS . "/../controlador/conexion.php");
 include (RUTA_ABS . "/../negocios/factura/traerdoc.php");
 include (RUTA_ABS . "/../negocios/cliente/clienteonfactura.php");
 include (RUTA_ABS . "/../negocios/producto/productoonfactura.php");
-
+ini_set("error_reporting", E_ALL & ~E_NOTICE);
 
 $doc = traerdoc($_GET["idfact"], "factura"); //PASO EL ID y LA TABLA
 $cliente = select_cliente($doc['idcliente']);
-$renglones = traer_renglones($doc["idfactura"], "factura")
+$renglones = traer_renglones($doc["idfactura"], "factura");
+$iva_array = traer_iva($doc["idfactura"], "renglon_factura", "idfactura");
+$matriz = array();
+$array_iva = array();
+$array_valoriva = array();
+$array_neto = array();
 ?>
 
 <!DOCTYPE html>
@@ -38,40 +43,38 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
         <!-- CABECERA DE LA FACTURA -->
         <div  id="header" >          
             <div class="datosfactura"  > 
+                 <table>
+                    <tr>
+                        <td>
+                            <b>Fecha: </b><?php echo $doc["fecha"]; ?>
 
-                <form class="form-inline" style="margin: 3px">
-                    <label  for="numfactura"><b>N° Factura:</b> </label>  <label id="numfactura"> <?php echo $doc['numerofactura']; ?></label>  
+                        </td>
+                        <td>
+                            <b>N°: </b><?php echo $doc['numerofactura']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <b>Cliente: </b><?php echo $cliente['nombre'] . " " . $cliente['apellido'] . " " . $cliente['apellido2']; ?>
+                        </td>
 
-
-<label for="fecha">&nbsp&nbsp<b>Fecha: </b> </label> <?php echo $doc['fecha']; ?> <!-- <input class="input-small" type="date" name="fecha" id="fecha" />  -->
-
-                </form> 
-
-
-
-                <form class="form-inline" style="margin: 1px">
-                    <label for="inputcliente"><b>Cliente: </b></label> <label id="cliente" /><?php echo $cliente['nombre'] . " " . $cliente['apellido'] . " " . $cliente['apellido2']; ?></label>      
-
-                </form>
-
-                <form class="form-inline" style="margin: 1px">
-
-                    <label for="nif"><b>NIF:</b> </label>  <label id="nif" name="nif"> <?php echo $cliente['nif'] ?> </label> 
-                </form>  
-
-                <form class="form-inline" style="margin: 1px">          
-                    <label for="direccion"><b>Dirección: </b> </label>  <label id="dir" name="dir"> <?php echo $cliente['calle'] . " " . $cliente['numero']; ?> </label> 
-                </form>     
-
-                <form class="form-inline" style="margin: 1px">  
-
-                    <label  for="poblacion"><b>Población: </b></label>  <label id="poblacion" name="poblacion"> <?php echo $cliente['poblacion']; ?> </label> 
-                </form>     
-                <form class="form-inline" style="margin: 1px">     
-
-
-
-                </form> 
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <b>NIF:</b><?php echo $cliente['nif'] ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Dirección: </b><?php echo $cliente['calle'] . " " . $cliente['numero']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Población: </b><?php echo $cliente['poblacion']; ?>
+                        </td>
+                    </tr>
+                </table>
             </div> 
             <div class="titulofactura">
                 <h1 class="titulo">Factura  </h1>    
@@ -87,12 +90,12 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
         </div> 
         <!-- CUERPO DE LA FACTURA-->       
         <div id="container">
-            <div class="tablafactura" style="margin-top: 1px">
-                <table class="table table-bordered" style="margin-top: 1px">
+            <div class="tablafactura" style="margin-top: -5px">
+                <table class="table table-hover" style="margin-top: 1px">
 
                     <thead>
 
-                        <tr>
+                         <tr style="background-color:#f5f5f5;">
                             <th>Cod</th>
                             <th>Producto</th>
                             <th>P. Unitario </th>
@@ -107,8 +110,9 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
                     <tbody id="tbody">
                         <?php
                         $t = 1;
+                        $sumaneto = 0;
                         while ($fila = mysql_fetch_assoc($renglones)) {
-                            echo '<tr name="fila" id="' . $t++ . '"> ';
+                            echo '<tr name="fila" id="' . $t . '"> ';
                             echo '<td>' . $fila['idproducto'] . '</td>';
                             echo '<td>' . select_prod($fila["idproducto"]) . '</td>';
                             echo '<td>' . $fila['punitario'] . '</td>';
@@ -118,14 +122,34 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
                             echo '<td>' . $fila['neto'] . '</td>';
                             echo '<td>' . $fila['total'] . '</td>';
                             echo '</tr>';
+                            $sumaneto = $sumaneto + $fila["neto"];
+                            array_push($matriz, $fila);
+                            array_push($array_iva, $fila["iva"]);
+                            $t++;
+                        }
+                        $array_iva = array_unique($array_iva);
+                        sort($array_iva);
+
+                        $i = 0;
+
+                        foreach ($array_iva as $iva) {
+                            foreach ($matriz as $fila) {
+
+                                if ($iva == $fila["iva"]) {
+                                    $array_neto[$i] = $array_neto[$i] + $fila["neto"];
+                                    $array_valoriva[$i] = $array_valoriva[$i] + $fila["valoriva"];
+                                }
+                            }
+
+                            $i++;
                         }
                         ?>
                     </tbody>
                 </table>
-                <table class="table table-bordered" style="margin: 5 1 5 1;">
+                <table class="table table-hover" style="margin-top: -15px">
                     <thead style="background-color:#f5f5f5;">
                         <tr>
-                            <th colspan="2">Total Bruto</th>
+                            <th>Total Bruto</th>
                             <th>Base imponible</th>
                             <th>% I.V.A</th>
                             <th>Importe IVA</th>
@@ -133,24 +157,59 @@ $renglones = traer_renglones($doc["idfactura"], "factura")
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="2">
-                                <?php echo "€ " . $doc['totalneto'] ?>
-                            </td>
-                            
-                            <td>
-                                asd
-                            </td>
-                            <td>
-                                asd
-                            </td>
-                            <td>
-                                <?php echo "€ " . $doc['totaliva']?>
-                            </td>
-                            <td>
-                                <?php echo "€" . $doc['total'] ?>
-                            </td>
-                        </tr>
+                        <?php
+                        $i = 0;
+                        $flag = false;
+                        foreach ($array_iva as $iva) {
+                            if (!$flag) {
+                                echo "<tr>";
+
+                                echo "<td rowspan='3'  class='totals'>";
+                                echo "€ ".$sumaneto;
+                                $flag = true;
+                                echo "</td>";
+
+
+                                echo "<td>";
+                                echo "€ ".$array_neto[$i];
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo $iva;
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo "€ ".$array_valoriva[$i];
+
+                                echo "</td>";
+
+                                echo "<td rowspan='3'  class='totals'>";
+                                echo "€ ". $doc["total"];
+                                echo "</td>";
+
+                                echo "</tr>";
+                                
+                            }else{
+                                
+                                echo "<tr>";
+                                
+                                echo "<td>";
+                                echo "€ ".$array_neto[$i];
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo $iva." %";
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo "€ ".$array_valoriva[$i];
+                                echo "</td>";
+                               
+                                echo "</tr>";
+                            }
+                            $i++;
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>

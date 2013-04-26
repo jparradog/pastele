@@ -96,7 +96,7 @@ $array_neto = array();
         <div id="container">
             <div class="tablafactura" style="margin-top: 1px">
 
-                <table class="table table-bordered" style="margin-top: 1px">
+                <table class="table table-hover" style="margin-top: 1px">
 
                     <thead>
 
@@ -153,7 +153,7 @@ $array_neto = array();
                 </table>
                 <!-- TABLA TOTALES -->
 
-                <table class="table table-bordered" style="margin-top:-15px;">
+                <table class="table table-hover" style="margin-top:-15px;">
                     <thead style="background-color:#f5f5f5;">
                         <tr>
                             <th>Total Bruto</th>
