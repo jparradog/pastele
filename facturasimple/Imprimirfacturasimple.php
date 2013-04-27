@@ -185,7 +185,7 @@ $array_neto = array();
                                 echo "</td>";
 
                                 echo "<td>";
-                                echo $iva;
+                                echo $iva." %";
                                 echo "</td>";
 
                                 echo "<td>";
