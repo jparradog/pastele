@@ -78,7 +78,7 @@ $array_neto = array();
             </div> 
             <div class="titulofactura">
                 <h1 class="titulo">Factura  </h1>    
-                <address >
+                <address>
                     <strong>Garcia Laspina Omar Hector</strong><br>
                     N.I.F. 77656834-W<br>
                     C/Torre Marcelo,4- Telf. 639023973-950337693<br>
@@ -175,7 +175,7 @@ $array_neto = array();
                                 echo "</td>";
 
                                 echo "<td>";
-                                echo $iva;
+                                echo $iva." %";
                                 echo "</td>";
 
                                 echo "<td>";
@@ -217,6 +217,7 @@ $array_neto = array();
 
                 <button onclick="window.print();" class="btn btn-primary" type="button"> <i class=" icon-print"></i> Imprimir</button> 
                 <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=modtablafactura.php&mdir=negocios&dir=factura','_self');" class="btn " type="button"> <i class="icon-remove"></i> Cancelar</button>    
+                <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=vista_facthead.php&mdir=factura','_self');" class="btn " type="button"> <i class="icon-plus"></i> Nueva factura</button>    
                 </p>    
             </div>
 
