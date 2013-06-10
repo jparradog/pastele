@@ -174,7 +174,7 @@ $array_neto = array();
                             if (!$flag) {
                                 echo "<tr>";
 
-                                echo "<td rowspan='3'  class='totals'>";
+                                echo "<td rowspan='4'  class='totals'>";
                                 echo "€ ".$sumaneto;
                                 $flag = true;
                                 echo "</td>";
@@ -193,7 +193,7 @@ $array_neto = array();
 
                                 echo "</td>";
 
-                                echo "<td rowspan='3'  class='totals'>";
+                                echo "<td rowspan='4'  class='totals'>";
                                 echo "€ ". $doc["total"];
                                 echo "</td>";
 
@@ -230,6 +230,7 @@ $array_neto = array();
                 <p >
                     <button class="btn btn-primary" onclick="print();" type="button"> <i class=" icon-print"></i> Imprimir</button> 
                     <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=modtablafacturasimple.php&mdir=negocios&dir=facturasimple','_self');" class="btn " type="button"> <i class="icon-remove"></i> Cancelar</button>    
+                    <button onclick="window.open('../<?php echo validarSesion(); ?>?iu=vista_simplehead.php&mdir=facturasimple','_self');" class="btn " type="button"> <i class="icon-plus"></i> Nueva factura simple</button>    
                 </p>    
             </div>
 
