@@ -7,11 +7,13 @@
 var idx = 1;
 
 function scalculoneto(subtotal,iva,valoriva,neto){
-    var resneto;
-    var resvaloriva;
-    
-    resvaloriva = subtotal * (iva/100);
-    resneto = subtotal - resvaloriva;
+    iva = (iva/100) + 1;
+    //subtotal es el total de la fila
+    var resneto; //resultado neto
+    var resvaloriva; // resultado valor iva
+
+    resneto = subtotal /iva;
+    resvaloriva = subtotal - resneto;
     
     neto.value =  resneto.toFixed(2);
     valoriva.value = resvaloriva.toFixed(2);
